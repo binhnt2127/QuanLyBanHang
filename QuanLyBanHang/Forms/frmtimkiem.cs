@@ -29,39 +29,12 @@ namespace QuanLyBanHang.Forms
 
         void CreateColumnForDataGridView()
         {
-            var colLoaihang = new DataGridTextBoxColumn();
-            var colTensp = new DataGridTextBoxColumn();
-            var colGiatien = new DataGridTextBoxColumn();
-            var colcongsuat = new DataGridTextBoxColumn();
 
-            colLoaihang.HeaderText = "Loại Hàng";
-            colTensp.HeaderText = "Tên sản phẩm";
-            colGiatien.HeaderText = "Giá tiền";
-            colcongsuat.HeaderText = "Công suất";
-
-            dtgvTimkiem.Columns.AddRange(new DataGridViewColumn[] {colLoaihang, colTensp, colGiatien, colcongsuat});
         }
 
         private void frmtimkiem_Load(object sender, EventArgs e)
         {
-            DataTable dtCL = new DataTable();
-            dtCL = dtBase.DocBang("Select * from tblHang");
-            //Gắn dl vào datagridview
-            dtgvTimkiem.DataSource = dtCL;
-
-            dtgvTimkiem.Columns[0].HeaderText = "Loại Hàng";
-            dtgvTimkiem.Columns[1].HeaderText = "Tên sản phẩm";
-            dtgvTimkiem.Columns[2].HeaderText = "Giá Tiền";
-            dtgvTimkiem.Columns[3].HeaderText = "Công suất";
-            dtgvTimkiem.Columns[4].HeaderText = "Đơn giá bán";
-
-            int size = dgvChatLieu.Width / 5;
-
-            dtgvTimkiem.Columns[0].Width = size - 52;
-            dtgvTimkiem.Columns[1].Width = size;
-            dtgvTimkiem.Columns[2].Width = size;
-            dtgvTimkiem.Columns[3].Width = size;
-            dtgvTimkiem.Columns[4].Width = size;
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -79,5 +52,43 @@ namespace QuanLyBanHang.Forms
             }
             this.Close();
          }
+
+        private void frmTimKiem_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBox_LoaiHang_Click(object sender, EventArgs e)
+        {
+            DataTable dtNV = dtBase.DocBang("Select MaNhanVien, TenNhanVien from [dbo].[tblNhanVien]");
+            cBox_LoaiHang.DataSource = dtNV;
+            cBox_LoaiHang.DisplayMember = "TenNhanVien";
+            cBox_LoaiHang.ValueMember = "MaNhanVien";
+        }
     }
 }

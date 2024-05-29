@@ -10,7 +10,7 @@ namespace QuanLyBanHang.Classes
 {
     internal class ProcessDatabase
     {
-        string strConnect = "Data Source=DESKTOP-H4P4SBP;" +
+        string strConnect = "Data Source=VanHai\\SQLEXPRESS;" +
                              "DataBase=QLBanHang;User ID=sa;" +
                              "Password=123;Integrated Security=false";
         public SqlConnection sqlConnect = null;
