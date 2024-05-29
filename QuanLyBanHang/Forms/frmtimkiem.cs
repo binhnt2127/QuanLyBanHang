@@ -27,20 +27,12 @@ namespace QuanLyBanHang.Forms
             this.tc = tc;
         }
 
-        void CreateColumnForDataGridView()
-        {
-
-        }
 
         private void frmtimkiem_Load(object sender, EventArgs e)
         {
             
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            CreateColumnForDataGridView();
-        }
 
         private void btn_Thoat_Click(object sender, EventArgs e)
         {
